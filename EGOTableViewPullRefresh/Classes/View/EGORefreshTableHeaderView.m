@@ -44,7 +44,7 @@
     if((self = [super initWithFrame:frame])) {
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		self.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+		self.backgroundColor = [UIColor clearColor];
 
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -89,8 +89,7 @@
 		[self addSubview:view];
 		_activityView = view;
 		[view release];
-		
-		
+        		
 		[self setState:EGOOPullRefreshNormal];
 		
     }
@@ -101,6 +100,21 @@
 
 - (id)initWithFrame:(CGRect)frame  {
   return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR];
+}
+
+- (void) addSeparator {    
+    float grayBorderHeight = 2.0f/[UIScreen mainScreen].scale;
+    float whiteBorderHeight = 1.0f/[UIScreen mainScreen].scale;
+
+    UIView *bottomGrayBorder = [[UIView alloc] initWithFrame:CGRectMake(0.0f, self.frame.size.height - grayBorderHeight - whiteBorderHeight, self.frame.size.width, grayBorderHeight)];
+    bottomGrayBorder.backgroundColor = [UIColor colorWithRed:216.0f/255.0f green:216.0f/255.0f blue:216.0f/255.0f alpha:1.0f];
+    bottomGrayBorder.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [self addSubview:bottomGrayBorder];
+    
+    UIView *bottomWhiteBorder = [[UIView alloc] initWithFrame:CGRectMake(0.0f, self.frame.size.height - whiteBorderHeight, self.frame.size.width, whiteBorderHeight)];
+    bottomWhiteBorder.backgroundColor = [UIColor whiteColor];
+    bottomWhiteBorder.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [self addSubview:bottomWhiteBorder];
 }
 
 #pragma mark -
