@@ -110,11 +110,13 @@
     bottomGrayBorder.backgroundColor = [UIColor colorWithRed:216.0f/255.0f green:216.0f/255.0f blue:216.0f/255.0f alpha:1.0f];
     bottomGrayBorder.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:bottomGrayBorder];
+    [bottomGrayBorder release];
     
     UIView *bottomWhiteBorder = [[UIView alloc] initWithFrame:CGRectMake(0.0f, self.frame.size.height - whiteBorderHeight, self.frame.size.width, whiteBorderHeight)];
     bottomWhiteBorder.backgroundColor = [UIColor whiteColor];
     bottomWhiteBorder.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:bottomWhiteBorder];
+    [bottomWhiteBorder release];
 }
 
 #pragma mark -
